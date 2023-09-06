@@ -30,4 +30,8 @@ export interface Unit {
     createdAt: string,
     updatedAt: string
 }
-  
+
+export interface Menu {
+    key: string,
+    label: string,
+}

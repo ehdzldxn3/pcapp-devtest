@@ -1,17 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {useSelector} from 'react-redux'
 import { Affix, Layout, Menu } from 'antd';
-import type { AppProps, MenuProps } from 'antd';
+import HeaderComponents from '../../components/header/HeaderComponents';
+import styles from '../../styles/styles.module.css'
+
 
 import { Branch } from '../../types/type'
 
-const { Header, Sider, Content, Footer } = Layout;
+const {  Sider, Content } = Layout;
 
-const menuItems: MenuProps['items'] = [
-  { key: '1', label: '창고' },
-  { key: '2', label: '유닛' },
-  
-]
 
 
 const HomeContainer = () => {
@@ -21,18 +18,22 @@ const HomeContainer = () => {
   return (
     <>
     <Layout>
-      <Header>
-        <Menu theme="dark" mode="horizontal" />
-      </Header>
+      <HeaderComponents/>
       <Layout>
         <Affix>
-          <Sider style={{ background: 'white', height: '100vh' }}>
-            <Menu items={menuItems}/>
+
+          <Sider className={styles['menu-wrap']}>
+            {menu.error === false && 
+            (<h1 className={styles.err}>메뉴를 불러오지 못했습니다.</h1>)
+            
+            }
+            
+            {/* <Menu items={menu.menuList}/> */}
           </Sider>
         </Affix>
+
         <Layout style={{ display: 'flex', flexDirection: 'column' }}>
           <Content>
-            
           </Content>
         </Layout>
       </Layout>

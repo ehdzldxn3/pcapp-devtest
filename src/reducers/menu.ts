@@ -33,21 +33,19 @@ const menuSlice = createSlice({
 
         //pending state 변경 전
         .addCase(menuGetAction.pending, (state) => {
-            return { ...state, loading: true }            
+            state.loading = true;         
         })
         //fulfilled state 변경 후
         .addCase(menuGetAction.fulfilled, (state, action) => {
-            return {
-                ...state,
-                menuList: action.payload,
-                loading: false,
-                error: false
-            }
+            state.menuList = action.payload;
+            state.loading = false;
+            state.error = false;
         })
 
         //rejected state 변경 실패
         .addCase(menuGetAction.rejected, (state, action) => {
-            return { ...state, loading: false, error: true }
+            state.loading = false;
+            state.error = true;
         })
 
 
@@ -55,3 +53,6 @@ const menuSlice = createSlice({
 })
 
 export default menuSlice
+
+
+
