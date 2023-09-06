@@ -10,14 +10,14 @@ const menuItems: MenuProps['items'] = [
   { key: '1', label: '창고' },
   { key: '2', label: '유닛' },
   { key: '3', label: 'TEST' }
-];
+]
 
 const PageLayout: React.FC<AppProps> = ({ children }) => {
   
   const [branchData, setBranchData] = useState<Array<Branch>>(branch);
-
-  console.log(branchData)
+  
   return (
+    
     <Layout>
       <Header>
         <Menu theme="dark" mode="horizontal" />
