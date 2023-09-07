@@ -1,3 +1,4 @@
+import { branchStatisticAction } from "actions/branch";
 import { menuGetAction } from "actions/menu";
 import HomeContainer from "containers/home/HomeContainer";
 import {GetServerSideProps, NextPage} from 'next'
@@ -12,9 +13,8 @@ export const getServerSideProps: GetServerSideProps  = wrapper.getServerSideProp
 
     // 메뉴 가져오기
     await store.dispatch(menuGetAction())
+    await store.dispatch(branchStatisticAction())
 
-    // 창고 통계 가져오기
-    // await store.dispatch(())
 
     return {
       props: {

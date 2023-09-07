@@ -1,38 +1,57 @@
 export interface Branch {
-    id: number
-    branchName: string
-    isAvailable: number,
-    isExamined: number,
-    numberOfUnits: number,
-    createdAt: string,
-    updatedAt: string
+    id: Number
+    branchName: String
+    isAvailable: Number
+    isExamined: Number
+    numberOfUnits: Number
+    createdAt: String
+    updatedAt: String
+}
+
+export interface branchStatisticType {
+    available : Number
+    notAvailable : Number
+    examined : Number
+    notExamined : Number
+    underExamined : Number
+    totalBranch : Number
 }
 
 export interface UnitItem {
-    id: number
-    unitId: number
-    unitItemName: string,
-    startDate: string,
-    endDate: string,
-    createdAt: string,
-    updatedAt: string
+    id: Number
+    unitId: Number
+    unitItemName: String
+    startDate: String
+    endDate: String
+    createdAt: String
+    updatedAt: String
 }
 
 export interface Unit {
-    id: number,
-    branchId: number,
-    unitName: string,
-    numberOfUnitItems: number,
-    width: number,
-    depth: number,
-    height: number,
-    priceValue: number,
-    createdAt: string,
-    updatedAt: string
+    id: Number
+    branchId: Number
+    unitName: String
+    numberOfUnitItems: Number
+    width: Number
+    depth: Number
+    height: Number
+    priceValue: Number
+    createdAt: String
+    updatedAt: String
 }
 
 export interface Menu {
-    key: string,
-    label: string,
+    key: String
+    label: String
 }
 
+export interface MenuType {
+    key : String
+    label : String
+} 
+
+export interface MenuStateType {
+    menuList : Array<MenuType>
+    loading : Boolean
+    error : Boolean
+}

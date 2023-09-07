@@ -1,17 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { menuGetAction } from "actions/menu";
+import { MenuStateType } from "types/type";
 
 
-interface MenuType {
-    key : string
-    label : string
-} 
 
-interface MenuStateType {
-    menuList : Array<MenuType>
-    loading : boolean
-    error : boolean
-}
 
 export const initialState = {
     menuList : new Array,

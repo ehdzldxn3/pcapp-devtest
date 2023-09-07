@@ -1,4 +1,7 @@
 import styles from './branchComponents.module.css'
+import {GetServerSideProps} from 'next'
+import { useState } from 'react'
+import { branchStatisticType } from 'types/type'
 
 const BranchComponents = () => {
   
@@ -46,3 +49,4 @@ const BranchComponents = () => {
 }
 
 export default BranchComponents
+

@@ -3,12 +3,9 @@ import {useSelector} from 'react-redux'
 import { Affix, Layout, Menu, MenuProps } from 'antd';
 import HeaderComponents from '../../components/header/HeaderComponents';
 import styles from '../../styles/styles.module.css'
-
-
-import { Branch } from '../../types/type'
-import BranchComponents from 'components/branch/BranchComponents';
-import UnitComponents from 'components/unit/UnitComponents';
 import LayoutContent from 'components/layoutContent/LayoutContent';
+import { ReducerType } from 'reducers/rootReducer';
+import { MenuStateType } from '../../types/type';
 
 const {  Sider, Content } = Layout;
 
@@ -16,13 +13,13 @@ const {  Sider, Content } = Layout;
 
 const HomeContainer = () => {
 
-  const menu = useSelector((state: any) => state.menu)
+  const menu = useSelector((state: ReducerType) => state.menu)
 
   const [layoutContent, setLayoutContent] = useState<string>('branch')
   const contentChange: MenuProps['onClick'] = (e) => {
     setLayoutContent(e.key)
   }
-  
+  console.log(menu.menuList)
   return (
     <>
     <Layout>
@@ -43,6 +40,7 @@ const HomeContainer = () => {
               <LayoutContent layoutContent={layoutContent}/>
           </Content>
         </Layout>
+
       </Layout>
     </Layout>
     </>

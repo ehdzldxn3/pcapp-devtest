@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { branchStatisticAction } from "actions/branch";
+import { branchStatisticType } from "types/type";
+
 
 
 
@@ -8,23 +10,17 @@ import { branchStatisticAction } from "actions/branch";
 export interface BranchStateType {
 
     // 통계
-    branchStatisticLoding : boolean,
-    branchStatisticError : boolean,
-    branchStatisticAvailable : number,
-    branchStatisticExamined : number,
-    branchStatisticAll : number,
-    
+    branchStatisticLoding : Boolean
+    branchStatisticError : Boolean
+    branchStatistic : branchStatisticType | null
 }
 
 
 export const initialState = {
 
-    branchStatisticLoding : false,
+    branchStatisticLoding: false,
     branchStatisticError : false,
-    branchStatisticAvailable : 0,
-    branchStatisticExamined : 0,
-    branchStatisticAll : 0,
-    
+    branchStatistic : null
 
 } as BranchStateType
 
@@ -38,16 +34,20 @@ const branchSlice = createSlice({
 
         //pending state 변경 전
         .addCase(branchStatisticAction.pending, (state) => {
+            state.branchStatisticLoding = true
             
         })
         //fulfilled state 변경 후
         .addCase(branchStatisticAction.fulfilled, (state, action) => {
-
+            state.branchStatisticLoding = false
+            state.branchStatisticError = false
+            state.branchStatistic = action.payload
         })
 
         //rejected state 변경 실패
         .addCase(branchStatisticAction.rejected, (state, action) => {
-
+            state.branchStatisticLoding = false
+            state.branchStatisticError = true
         })
 
 
