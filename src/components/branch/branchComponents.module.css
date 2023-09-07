@@ -1,0 +1,46 @@
+section.section {
+    width: 90%;
+    border: 1px solid #bbb;
+    margin: 0 auto;
+    margin-top: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.section > h1 {font-size: 30px;}
+
+
+.statistic {}
+.statistic .statistic-wrap {
+    padding-top: 30px;
+}
+.statistic .statistic-wrap ul {
+    display: flex;
+    justify-content: space-between;
+}
+.statistic .statistic-wrap ul li {}
+.statistic .statistic-wrap ul li h1 {
+    font-size: 14px;
+    position: relative;
+}
+.statistic .statistic-wrap ul li h2 {
+    font-size: 14px;
+}
+.statistic .statistic-wrap ul li h1 span {
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    position: absolute;
+    top: 50%;
+    left: -5px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+span.blue {background-color: blue;}
+span.green {background-color: green;}
+span.orange {background-color: orange;}
+span.red {background-color: red;}
+span.greenyellow {background-color: greenyellow;}
+

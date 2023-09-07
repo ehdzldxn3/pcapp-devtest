@@ -10,7 +10,11 @@ const Home: NextPage = () => {
 export const getServerSideProps: GetServerSideProps  = wrapper.getServerSideProps((store) => async (context) => {
   try {
 
+    // 메뉴 가져오기
     await store.dispatch(menuGetAction())
+
+    // 창고 통계 가져오기
+    // await store.dispatch(())
 
     return {
       props: {

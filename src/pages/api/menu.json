@@ -1,4 +1,4 @@
 [
-    { "key": "1", "label": "창고" },
-    { "key": "2", "label": "유닛" }
+    { "key": "branch", "label": "창고" },
+    { "key": "unit", "label": "유닛" }
 ]

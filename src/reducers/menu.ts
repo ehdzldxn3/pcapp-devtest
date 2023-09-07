@@ -6,12 +6,8 @@ interface MenuType {
     key : string
     label : string
 } 
-interface ErrorType {
-    msg : string
-    err : boolean
-} 
 
-interface MenuState {
+interface MenuStateType {
     menuList : Array<MenuType>
     loading : boolean
     error : boolean
@@ -21,7 +17,7 @@ export const initialState = {
     menuList : new Array,
     loading : false,
     error : false
-} as MenuState
+} as MenuStateType
 
 const menuSlice = createSlice({
     name: 'menuSliceName',

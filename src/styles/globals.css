@@ -4,10 +4,8 @@ body {
   margin: 0;
   padding: 0;  
 }
-* {
-  margin: 0;
-  padding: 0;
-}
+* {margin: 0;padding: 0;box-sizing: border-box;}
+ul, li, dl, dt {list-style: none;}
 
-
-
+.red {color: red;}
+.fz30 {font-size: 30px;}

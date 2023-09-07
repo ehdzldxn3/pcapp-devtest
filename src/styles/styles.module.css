@@ -9,3 +9,9 @@
     text-align: center;
     padding-top: 100px;
 }
+
+.content-wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
