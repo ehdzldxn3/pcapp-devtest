@@ -8,14 +8,6 @@ export interface Branch {
     updatedAt: String
 }
 
-export interface branchStatisticType {
-    available : Number
-    notAvailable : Number
-    examined : Number
-    notExamined : Number
-    underExamined : Number
-    totalBranch : Number
-}
 
 export interface UnitItem {
     id: Number
@@ -54,4 +46,19 @@ export interface MenuStateType {
     menuList : Array<MenuType>
     loading : Boolean
     error : Boolean
+}
+
+export interface BranchStateType {
+    branchStatisticLoding : Boolean
+    branchStatisticError : Boolean
+    branchStatistic : BranchStatisticType | any
+}
+
+export interface BranchStatisticType {
+    available : Number
+    notAvailable : Number
+    examined : Number
+    notExamined : Number
+    underExamined : Number
+    totalBranch : Number
 }

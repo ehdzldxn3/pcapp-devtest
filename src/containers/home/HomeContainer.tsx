@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {useSelector} from 'react-redux'
 import { Affix, Layout, Menu, MenuProps } from 'antd';
 import HeaderComponents from '../../components/header/HeaderComponents';
@@ -13,13 +13,12 @@ const {  Sider, Content } = Layout;
 
 const HomeContainer = () => {
 
-  const menu = useSelector((state: ReducerType) => state.menu)
-
+  const menu: MenuStateType = useSelector((state: ReducerType) => state.menu)
+  
   const [layoutContent, setLayoutContent] = useState<string>('branch')
   const contentChange: MenuProps['onClick'] = (e) => {
     setLayoutContent(e.key)
   }
-  console.log(menu.menuList)
   return (
     <>
     <Layout>

@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import { branchStatisticType } from "types/type";
+
 import branch from "../pages/api/branch.json"
+import { BranchStatisticType } from "types/type";
 
 
 export const branchStatisticAction = createAsyncThunk('branchStatistic', async (data, { rejectWithValue }) => {
@@ -15,7 +16,7 @@ export const branchStatisticAction = createAsyncThunk('branchStatistic', async (
             if(item.isAvailable === 1) notAvailable++
             if(item.isExamined === 0) underExamined++
             if(item.isExamined === 1) examined++
-            if(item.isExamined === 1) notExamined++
+            if(item.isExamined === 2) notExamined++
         })
 
         const response = {
@@ -25,7 +26,7 @@ export const branchStatisticAction = createAsyncThunk('branchStatistic', async (
             notExamined : notExamined,
             underExamined : underExamined,
             totalBranch : branch.length
-        } as branchStatisticType
+        } as BranchStatisticType
         
         
         return response;

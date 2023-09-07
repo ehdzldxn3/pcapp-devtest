@@ -1,26 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { branchStatisticAction } from "actions/branch";
-import { branchStatisticType } from "types/type";
+import { BranchStateType, branchStatisticType } from "types/type";
 
 
 
 
 
 
-export interface BranchStateType {
 
-    // 통계
-    branchStatisticLoding : Boolean
-    branchStatisticError : Boolean
-    branchStatistic : branchStatisticType | null
-}
 
 
 export const initialState = {
 
     branchStatisticLoding: false,
     branchStatisticError : false,
-    branchStatistic : null
+    branchStatistic : null,
 
 } as BranchStateType
 
