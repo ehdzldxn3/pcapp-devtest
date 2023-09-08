@@ -8,4 +8,7 @@ body {
 ul, li, dl, dt {list-style: none;}
 
 .red {color: red;}
+.fz20 {font-size: 20px;}
 .fz30 {font-size: 30px;}
+
+button {outline: none;border: 0;}

@@ -1,7 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 import branch from "../pages/api/branch.json"
-import { BranchStatisticType } from "types/type";
+import { Branch, BranchStatisticType } from "types/type";
 
 
 export const branchStatisticAction = createAsyncThunk('branchStatistic', async (data, { rejectWithValue }) => {
@@ -34,3 +34,34 @@ export const branchStatisticAction = createAsyncThunk('branchStatistic', async (
         return rejectWithValue(error);
     }
 })
+
+// export const branchAddAction = createAsyncThunk('branchAddAction', async (data, { rejectWithValue }) => {
+//     try {
+//         const response = {
+//             id: branch.length + 1,
+//             branchName: "추가한 창고 " + branch.length + 1,
+//             isAvailable: 0,
+//             isExamined: 0,
+//             numberOfUnits: Math.floor(Math.random() * 11),
+//             createdAt: new Date().toString(),
+//             updatedAt: new Date().toString() 
+//         } as Branch
+//         return response;
+//     } catch (error) {
+//         return rejectWithValue(error);
+//     }
+// })
+
+
+export const branchTableDataAction = createAsyncThunk('branchTableDataAction', async (data, { rejectWithValue }) => {
+    try {
+
+        let response: Array<Branch> = branch
+
+        return response;
+    } catch (error) {
+        return rejectWithValue(error);
+    }
+})
+
+

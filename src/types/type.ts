@@ -1,64 +1,72 @@
 export interface Branch {
-    id: Number
-    branchName: String
-    isAvailable: Number
-    isExamined: Number
-    numberOfUnits: Number
-    createdAt: String
-    updatedAt: String
+    id: number
+    branchName: string
+    isAvailable: number
+    isExamined: number
+    numberOfUnits: number
+    createdAt: string
+    updatedAt: string
 }
 
 
 export interface UnitItem {
-    id: Number
-    unitId: Number
-    unitItemName: String
-    startDate: String
-    endDate: String
-    createdAt: String
-    updatedAt: String
+    id: number
+    unitId: number
+    unitItemName: string
+    startDate: string
+    endDate: string
+    createdAt: string
+    updatedAt: string
 }
 
 export interface Unit {
-    id: Number
-    branchId: Number
-    unitName: String
-    numberOfUnitItems: Number
-    width: Number
-    depth: Number
-    height: Number
-    priceValue: Number
-    createdAt: String
-    updatedAt: String
+    id: number
+    branchId: number
+    unitName: string
+    numberOfUnitItems: number
+    width: number
+    depth: number
+    height: number
+    priceValue: number
+    createdAt: string
+    updatedAt: string
 }
 
 export interface Menu {
-    key: String
-    label: String
+    key: string
+    label: string
 }
 
 export interface MenuType {
-    key : String
-    label : String
+    key : string
+    label : string
 } 
 
 export interface MenuStateType {
     menuList : Array<MenuType>
-    loading : Boolean
-    error : Boolean
+    menuListloading : Boolean
+    menuListerror : Boolean
 }
 
 export interface BranchStateType {
-    branchStatisticLoding : Boolean
-    branchStatisticError : Boolean
+    branchStatisticLoding : boolean
+    branchStatisticError : boolean
     branchStatistic : BranchStatisticType | any
+
+    branchAddLoding : boolean
+    branchAddError : boolean
+
+    branchTableDataLoding : boolean,
+    branchTableDataError : boolean,
+    branchTableData: Array<Branch> | any
 }
 
 export interface BranchStatisticType {
-    available : Number
-    notAvailable : Number
-    examined : Number
-    notExamined : Number
-    underExamined : Number
-    totalBranch : Number
+    available : number
+    notAvailable : number
+    examined : number
+    notExamined : number
+    underExamined : number
+    totalBranch : number
 }
+

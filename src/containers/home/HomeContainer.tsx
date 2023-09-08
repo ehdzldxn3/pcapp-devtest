@@ -15,7 +15,7 @@ const HomeContainer = () => {
 
   const menu: MenuStateType = useSelector((state: ReducerType) => state.menu)
   
-  const [layoutContent, setLayoutContent] = useState<string>('branch')
+  const [layoutContent, setLayoutContent] = useState<string>('BRANCH')
   const contentChange: MenuProps['onClick'] = (e) => {
     setLayoutContent(e.key)
   }
@@ -27,7 +27,7 @@ const HomeContainer = () => {
         <Affix>
 
           <Sider className={styles['menu-wrap']}>
-            {menu.error !== false ?
+            {menu.menuListerror !== false ?
             (<h1 className={styles.err}>메뉴를 불러오지 못했습니다.</h1>)
             :
             (<Menu items={menu.menuList} onClick={contentChange}/>)}
@@ -36,7 +36,10 @@ const HomeContainer = () => {
 
         <Layout className={styles['content-wrap']}>
           <Content>
-              <LayoutContent layoutContent={layoutContent}/>
+              <LayoutContent 
+              layoutContent={layoutContent}
+              setLayoutContent={setLayoutContent}
+              />
           </Content>
         </Layout>
 
