@@ -2,7 +2,7 @@ import { branchStatisticAction, branchDataAction } from "actions/branch";
 import { menuGetAction } from "actions/menu";
 import HomeContainer from "containers/home/HomeContainer";
 import {GetServerSideProps, NextPage} from 'next'
-import wrapper from "../store/configureStore";
+import wrapper from "../../store/configureStore";
 
 
 const Home: NextPage = () => {

@@ -56,9 +56,9 @@ export interface BranchStateType {
     branchAddLoding : boolean
     branchAddError : boolean
 
-    branchTableDataLoding : boolean,
-    branchTableDataError : boolean,
-    branchTableData: Array<Branch> | any
+    branchDataLoding : boolean,
+    branchDataError : boolean,
+    branchData: Array<Branch> | any
 }
 
 export interface BranchStatisticType {
@@ -70,3 +70,13 @@ export interface BranchStatisticType {
     totalBranch : number
 }
 
+export interface UnitStateType {
+    unitStatisticLoding : boolean
+    unitStatisticError : boolean
+    unitStatistic : UnitStateType | any
+    
+}
+
+export interface UnitStateType {
+
+}

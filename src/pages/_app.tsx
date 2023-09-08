@@ -1,20 +1,21 @@
 import type { AppProps } from 'next/app';
 import wrapper from '../store/configureStore';
 import '../styles/globals.css'
+import Nav from 'components/nav/nav';
+import Header from 'components/header/Header';
 
 
 const App = ({ Component, pageProps}: AppProps) => {
   return (
-    
-    <Component {...pageProps}/>
+      <>
+        <Header />
+        <div className={`content`}>
+          <Nav/>
+          <Component {...pageProps}/>
+        </div>
+      </>
   )
 }
-
-// App.prototype = {
-//   Component: PropTypes.elementType,
-//   store: Proptypes.object,
-// }
-
 export default wrapper.withRedux(App);
 
 

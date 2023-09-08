@@ -53,7 +53,7 @@ export const branchStatisticAction = createAsyncThunk('branchStatistic', async (
 // })
 
 
-export const branchTableDataAction = createAsyncThunk('branchTableDataAction', async (data, { rejectWithValue }) => {
+export const branchDataAction = createAsyncThunk('branchDataAction', async (data, { rejectWithValue }) => {
     try {
 
         let response: Array<Branch> = branch

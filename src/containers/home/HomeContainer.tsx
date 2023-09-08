@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {useSelector} from 'react-redux'
 import { Affix, Layout, Menu, MenuProps } from 'antd';
-import HeaderComponents from '../../components/header/HeaderComponents';
+import HeaderComponents from '../../components/header/Header';
 import styles from '../../styles/styles.module.css'
 import LayoutContent from 'components/layoutContent/LayoutContent';
 import { ReducerType } from 'reducers/rootReducer';
@@ -22,9 +22,9 @@ const HomeContainer = () => {
   return (
     <>
     <Layout>
-      <HeaderComponents/>
+      
       <Layout>
-        <Affix>
+        {/* <Affix>
 
           <Sider className={styles['menu-wrap']}>
             {menu.menuListerror !== false ?
@@ -32,18 +32,20 @@ const HomeContainer = () => {
             :
             (<Menu items={menu.menuList} onClick={contentChange}/>)}
           </Sider>
-        </Affix>
+        </Affix> */}
 
         <Layout className={styles['content-wrap']}>
           <Content>
               <LayoutContent 
-              layoutContent={layoutContent}
-              setLayoutContent={setLayoutContent}
+                layoutContent={layoutContent}
+                setLayoutContent={setLayoutContent}
               />
           </Content>
         </Layout>
-
       </Layout>
+
+
+      
     </Layout>
     </>
   )

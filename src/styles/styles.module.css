@@ -1,14 +1,6 @@
-.menu-wrap {
-  height: calc(100vh);
-  background-color: white !important;
-}
 
 
-.menu-wrap h1.err {
-    color: red;
-    text-align: center;
-    padding-top: 100px;
-}
+
 
 .content-wrap {
   display: flex;

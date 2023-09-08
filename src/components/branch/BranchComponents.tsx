@@ -6,36 +6,6 @@ import { AppDispatch } from 'store/configureStore';
 import { Table } from 'antd';
 import { Dispatch, SetStateAction } from 'react';
 
-
-const dataSource = [
-  {
-    key: 0,
-    branchName: 'branchName',
-    isAvailable: 0,
-    isExamined: 0,
-    numberOfUnits: 5,
-    createdAt: "2021-08-23T22:43:43.532Z",
-    updatedAt: "2022-11-01T16:40:21.723Z"
-  },
-  {
-    key: 1,
-    branchName: 'branchName',
-    isAvailable: 1,
-    isExamined: 1,
-    numberOfUnits: 3,
-    createdAt: "2021-08-23T22:43:43.532Z",
-    updatedAt: "2022-11-01T16:40:21.723Z"
-  },
-  {
-    key: 2,
-    branchName: 'branchName',
-    isAvailable: 1,
-    isExamined: 2,
-    numberOfUnits: 1,
-    createdAt: "2021-08-24T22:43:43.532Z",
-    updatedAt: "2022-11-01T16:40:21.723Z"
-  }
-]
 const columns = [
   {
     
@@ -111,16 +81,19 @@ const columns = [
             const targetButton = e.target as HTMLButtonElement
             const buttonText = targetButton.textContent
             console.log(buttonText)
+            e.stopPropagation()
           }}>창고</button>
           <button onClick={(e) => {
             const targetButton = e.target as HTMLButtonElement
             const buttonText = targetButton.textContent
             console.log(buttonText)            
+            e.stopPropagation()
           }}>유닛</button>
           <button onClick={(e) => {
             const targetButton = e.target as HTMLButtonElement
             const buttonText = targetButton.textContent
-            console.log(buttonText)            
+            console.log(buttonText)
+            e.stopPropagation()    
           }}>예약</button>
         </span>
 
@@ -138,7 +111,7 @@ const BranchComponents = ({setLayoutContent}: propsType) => {
 
   const branchState: BranchStateType = useSelector((state: ReducerType) => state.branch)
   const stat: BranchStatisticType = branchState.branchStatistic
-  const tableData: Array<Branch> = branchState.branchTableData
+  const tableData: Array<Branch> = branchState.branchData
 
   
   const consoleLog = (e: React.MouseEvent<HTMLButtonElement>) => {

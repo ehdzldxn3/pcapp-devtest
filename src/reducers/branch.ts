@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { branchStatisticAction, branchTableDataAction } from "actions/branch";
+import { branchStatisticAction, branchDataAction } from "actions/branch";
 import { BranchStateType } from "types/type";
 
 
@@ -9,12 +9,12 @@ export const initialState = {
     branchStatisticError : false,
     branchStatistic : null,
 
-    branchAddLoding: false,
-    branchAddError: false,
+    // branchAddLoding: false,
+    // branchAddError: false,
 
-    branchTableDataLoding : false,
-    branchTableDataError : false,
-    branchTableData: null
+    branchDataLoding : false,
+    branchDataError : false,
+    branchData: null
 
 } as BranchStateType
 
@@ -59,20 +59,20 @@ const branchSlice = createSlice({
         // })
 
 
-        // table 가져올 데이터
-        .addCase(branchTableDataAction.pending, (state) => {
-            state.branchAddLoding = true
+        
+        .addCase(branchDataAction.pending, (state) => {
+            state.branchDataLoding = true
         })
 
-        .addCase(branchTableDataAction.fulfilled, (state, action) => {
-            state.branchTableData = action.payload
-            state.branchAddLoding = false
-            state.branchAddError = false
+        .addCase(branchDataAction.fulfilled, (state, action) => {
+            state.branchData = action.payload
+            state.branchDataLoding = false
+            state.branchDataError = false
         })
 
-        .addCase(branchTableDataAction.rejected, (state, action) => {
-            state.branchAddLoding = false
-            state.branchAddError = true
+        .addCase(branchDataAction.rejected, (state, action) => {
+            state.branchDataLoding = false
+            state.branchDataError = true
         })
 
 
