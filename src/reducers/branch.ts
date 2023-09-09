@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { branchStatisticAction, branchDataAction } from "actions/branch";
+import { branchDataAction, branchStatisticAction, branchUnitSelectAction } from "actions/branch";
 import { BranchStateType } from "types/type";
 
 
@@ -9,12 +9,13 @@ export const initialState = {
     branchStatisticError : false,
     branchStatistic : null,
 
-    // branchAddLoding: false,
-    // branchAddError: false,
-
     branchDataLoding : false,
     branchDataError : false,
-    branchData: null
+    branchData: null,
+
+    branchUnitSelectListLoding : false,
+    branchUnitSelectListError : false,
+    branchUnitSelectList : null,
 
 } as BranchStateType
 
@@ -41,25 +42,8 @@ const branchSlice = createSlice({
             state.branchStatisticLoding = false
             state.branchStatisticError = true
         })
-
-        // // 창고 추가
-        // .addCase(branchAddAction.pending, (state) => {
-        //     state.branchAddLoding = true
-        // })
-
-        // .addCase(branchAddAction.fulfilled, (state, action) => {
-        //     // state.branchStatistic.push(action.payload)
-        //     state.branchAddLoding = false
-        //     state.branchAddError = false
-        // })
-
-        // .addCase(branchAddAction.rejected, (state, action) => {
-        //     state.branchAddLoding = false
-        //     state.branchAddError = true
-        // })
-
-
         
+        // 전체 데이터 뽑기
         .addCase(branchDataAction.pending, (state) => {
             state.branchDataLoding = true
         })
@@ -73,6 +57,24 @@ const branchSlice = createSlice({
         .addCase(branchDataAction.rejected, (state, action) => {
             state.branchDataLoding = false
             state.branchDataError = true
+        })
+
+
+
+        // 유닛 페이지 select 박스 데이터
+        .addCase(branchUnitSelectAction.pending, (state) => {
+            state.branchUnitSelectListLoding = true
+        })
+
+        .addCase(branchUnitSelectAction.fulfilled, (state, action) => {
+            state.branchUnitSelectList = action.payload
+            state.branchUnitSelectListLoding = false
+            state.branchUnitSelectListError = false
+        })
+
+        .addCase(branchUnitSelectAction.rejected, (state, action) => {
+            state.branchUnitSelectListLoding = false
+            state.branchUnitSelectListError = true
         })
 
 

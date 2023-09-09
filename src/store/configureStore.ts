@@ -8,7 +8,7 @@ import { createWrapper } from 'next-redux-wrapper';
 const createStore = () => {
     const store = configureStore({
         reducer: rootReducer, // 리듀서
-        middleware : (getDefaultMiddleware) => getDefaultMiddleware().concat(thunk),
+        middleware : (getDefaultMiddleware) => getDefaultMiddleware({serializableCheck: false}).concat(thunk),
     })
     return store
 }

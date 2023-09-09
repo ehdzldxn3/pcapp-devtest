@@ -1,5 +1,4 @@
 import { branchStatisticAction, branchDataAction } from "actions/branch";
-import { menuGetAction } from "actions/menu";
 import HomeContainer from "containers/home/HomeContainer";
 import {GetServerSideProps, NextPage} from 'next'
 import wrapper from "../store/configureStore";
@@ -10,11 +9,19 @@ const Home: NextPage = () => {
 }
 export const getServerSideProps: GetServerSideProps  = wrapper.getServerSideProps((store) => async (context) => {
   try {
-
-    // 메뉴 가져오기
-    await store.dispatch(menuGetAction())
+    
     await store.dispatch(branchStatisticAction())
     await store.dispatch(branchDataAction())
+
+    if(context.req.url === '/') {
+      return {
+        redirect: {
+          permanent: false,
+          destination: '/branch'
+        }
+      }
+    }
+      
 
     return {
       props: {

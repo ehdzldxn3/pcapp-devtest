@@ -1,14 +1,14 @@
 import { combineReducers } from "@reduxjs/toolkit";
-import menu from "./menu";
+
 import branch from "./branch";
+import unit from "./unit";
 import { HYDRATE } from "next-redux-wrapper";
 
 
 const rootReducer = (state:any, action:any) => {
     const combineReducer = combineReducers({
-        menu : menu.reducer,
         branch : branch.reducer,
-        
+        unit : unit.reducer
     })
     if (action.type === HYDRATE) {
         const nextState = {

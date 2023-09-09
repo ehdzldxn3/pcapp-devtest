@@ -1,20 +1,22 @@
-import { branchStatisticAction, branchDataAction } from "actions/branch";
-import { menuGetAction } from "actions/menu";
-import HomeContainer from "containers/home/HomeContainer";
 import {GetServerSideProps, NextPage} from 'next'
 import wrapper from "../../store/configureStore";
+import UnitDetailContainer from 'containers/unit/UnitDetailContainer';
+import { branchDataAction, branchUnitSelectAction } from 'actions/branch';
+import { unitItemTableData, unitStatisticAction, unitTableDataAction } from 'actions/unit';
 
 
-const Home: NextPage = () => {
-  return <HomeContainer/>
+const UnitDetail: NextPage = () => {
+  return <UnitDetailContainer/>
 }
 export const getServerSideProps: GetServerSideProps  = wrapper.getServerSideProps((store) => async (context) => {
   try {
+    const branchId: string = context.query.id?.toString() !== undefined ?  context.query.id.toString() : '1'
 
-    // 메뉴 가져오기
-    await store.dispatch(menuGetAction())
-    await store.dispatch(branchStatisticAction())
-    await store.dispatch(branchDataAction())
+    await store.dispatch(branchUnitSelectAction())
+    await store.dispatch(unitStatisticAction(branchId))
+    await store.dispatch(unitTableDataAction(branchId))
+    await store.dispatch(unitItemTableData(branchId))
+    
 
     return {
       props: {
@@ -26,5 +28,5 @@ export const getServerSideProps: GetServerSideProps  = wrapper.getServerSideProp
   }
 })
 
-export default Home
+export default UnitDetail
 

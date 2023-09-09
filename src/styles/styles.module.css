@@ -9,3 +9,144 @@
 }
 
 
+section.section {
+  width: 90%;
+  border: 1px solid #bbb;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.section>h1 {
+  font-size: 30px;
+}
+
+
+.statistic {}
+
+.statistic .statistic-wrap {
+  padding-top: 30px;
+}
+
+.statistic .statistic-wrap ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+.statistic .statistic-wrap ul li {}
+
+.statistic .statistic-wrap ul li h1 {
+  font-size: 14px;
+  position: relative;
+}
+
+.statistic .statistic-wrap ul li h2 {
+  font-size: 14px;
+}
+
+.statistic .statistic-wrap ul li h1 span {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  position: absolute;
+  top: 50%;
+  left: -5px;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+
+span.blue {
+  background-color: blue;
+}
+
+span.green {
+  background-color: green;
+}
+
+span.orange {
+  background-color: orange;
+}
+
+span.red {
+  background-color: red;
+}
+
+span.greenyellow {
+  background-color: greenyellow;
+}
+
+
+
+.table {
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 30px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  padding: 30px;
+}
+
+.table .table-wrap {}
+
+.branch-add-wrap {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.branch-add-wrap>button {
+  padding: 5px 10px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+}
+
+.branch-add-wrap>button:hover {
+  background-color: aquamarine;
+  border: 1px solid #fff;
+  transition: 0.3s;
+}
+
+
+
+.avai {
+  font-weight: 400;
+}
+
+.avai>span {
+  width: 5px;
+  height: 5px;
+  display: inline-block;
+  border-radius: 50%;
+  margin-right: 3px;
+}
+
+
+.table-btn-wrap>button {
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+}
+
+.table-btn-wrap>button:hover {
+  transition: 0.3s;
+  background-color: aquamarine;
+  border: 1px solid #fff;
+}
+
+.table-btn-wrap>button:nth-child(2) {
+  margin: 0 5px;
+}
+.table-box {
+  padding-top: 30px;
+}
+
+.select-wrap {
+  padding-top: 30px;
+  display: flex;
+}
+.select-wrap > h1 {
+  padding-right: 30px;
+}
